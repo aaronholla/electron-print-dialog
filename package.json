@@ -1,6 +1,6 @@
 {
   "name": "electron-print-dialog",
-  "version": "0.1.0-alpha.1",
+  "version": "0.1.0-alpha.2",
   "description": "Add a print dialog in your electron app.",
   "main": "dist/index.js",
   "scripts": {
