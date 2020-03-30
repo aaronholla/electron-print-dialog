@@ -64,6 +64,7 @@ module.exports = function () {
   }
 
   return {
-    open
+    ...(process && process.type !== 'renderer' && { open }),
+    createPDF
   };
 }();
