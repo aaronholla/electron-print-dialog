@@ -2,6 +2,7 @@
 
 const path = require('path');
 const electron = require('electron');
+const PDFJS = require('pdfjs-dist');
 
 module.exports = function () {
   const BrowserWindow = electron.BrowserWindow || electron.remote.BrowserView;
@@ -33,6 +34,16 @@ module.exports = function () {
     // TODO: move this to react app and use electron.remote
     // const printers = printWindow.webContents.getPrinters();
   };
+
+  const createPDF = (data) => {
+    // check if data is Uint8array | url
+    // if its a url make request and read content-type from headers
+    // if its a Uint8Array or pdf document type create a pdf
+    PDFJS.getDocument(data);
+
+    // TODO: if its a image type open hidden browser window and printToPDF
+    // TODO: if its html open hidden browser window and get outerHTML of the webcontents
+  }
 
   return {
     open

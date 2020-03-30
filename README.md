@@ -32,7 +32,7 @@ printDialog.open(window, {
 
 ## API
 
-### `printDialog.attach(window)` \*Not Implemented
+### `printDialog.attach(window)` *Not Implemented
 
 Add print listeners to the given `BrowserWindow` to override the default print behavior.
 
@@ -45,3 +45,13 @@ Open the print dialog for the given window and print listeners to the given `Bro
 - `options` Object (optional)
 
   - `data` (Uint8Array | String)(optional) - PDF data or a url to print. Supports urls to html, pdf, or png. If not provided the windows webContents will be used instead.
+
+### `printDialog.createPDF(data) => filePath`
+
+Create a pdf in the temporary directory from data. Returns the path to the new file that was created.
+
+- `data` (Uint8Array | String)(**required**) - PDF data or a url to print. Supports urls to html, pdf, or png. If not provided the windows webContents will be used instead.
+
+### `printDialog.clearAllTemp()` *Not Implemented
+
+Deletes any temp pdf files that have been created.
