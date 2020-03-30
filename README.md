@@ -11,8 +11,7 @@ $ npm install --save electron-print-dialog
 ## Usage
 
 ```js
-// Make sure to excute the function to initialize a printDialog
-const printDialog = require('electron-print-dialog')();
+const printDialog = require('electron-print-dialog');
 let window;
 
 app.on('ready', function() {

@@ -3,7 +3,7 @@
 const path = require('path');
 const electron = require('electron');
 
-module.exports = function() {
+module.exports = function () {
   const BrowserWindow = electron.BrowserWindow || electron.remote.BrowserView;
   let printWindow;
 
@@ -37,4 +37,4 @@ module.exports = function() {
   return {
     open
   };
-};
+}();
