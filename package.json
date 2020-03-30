@@ -7,7 +7,6 @@
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "prepublish": "npm run build",
-    "publish": "npm publish",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Aaron Holland <hello@aaronholla.com> (https://aaronholla.com)",
