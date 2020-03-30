@@ -10,6 +10,10 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Aaron Holland <hello@aaronholla.com> (https://aaronholla.com)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aaronholla/electron-print-dialog.git"
+  },
   "license": "MIT",
   "engines": {
     "node": ">=8.0.0"
