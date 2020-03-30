@@ -1,12 +1,18 @@
 'use strict';
 
-const path = require('path');
 const electron = require('electron');
 const PDFJS = require('pdfjs-dist');
 
 module.exports = function () {
   const BrowserWindow = electron.BrowserWindow || electron.remote.BrowserView;
+  const ipc = electron.ipcMain || electron.remote.ipcRenderer;
   let printWindow;
+
+  ipc.on('closePrintDialog', () => {
+    console.log('Closing Print Window...');
+    printWindow.close();
+    printWindow = null;
+  });
 
   const open = (window, { data }) => {
     // TODO: check window is valid
@@ -25,6 +31,8 @@ module.exports = function () {
     });
     printWindow.removeMenu();
     printWindow.webContents.openDevTools();
+    // TODO: instead of putting here run a check at top of file to know if we are in main or renderer
+    const path = require('path');
     printWindow.loadURL(`file://${path.join(__dirname, '../dist/index.html')}`);
     printWindow.on('closed', () => (printWindow = null));
 
