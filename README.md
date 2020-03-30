@@ -51,6 +51,7 @@ Open the print dialog for the given window and print listeners to the given `Bro
 Create a pdf in the temporary directory from data. Returns the path to the new file that was created.
 
 - `data` (Uint8Array | String)(**required**) - PDF data or a url to print. Supports urls to html, pdf, or png. If not provided the windows webContents will be used instead.
+- `type` (String) - a string that says what type the data is.
 
 ### `printDialog.clearAllTemp()` *Not Implemented
 

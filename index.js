@@ -35,14 +35,24 @@ module.exports = function () {
     // const printers = printWindow.webContents.getPrinters();
   };
 
-  const createPDF = (data) => {
-    // check if data is Uint8array | url
-    // if its a url make request and read content-type from headers
-    // if its a Uint8Array or pdf document type create a pdf
-    PDFJS.getDocument(data);
-
-    // TODO: if its a image type open hidden browser window and printToPDF
-    // TODO: if its html open hidden browser window and get outerHTML of the webcontents
+  const createPDF = (data, type) => {
+    /**
+     * TODO: This should be automatic in the future it should infer the type based on the data passed in
+     * TODO: check if data is Uint8array | url
+     * TODO: if its a url make request and read content-type from headers
+     * TODO: if its a Uint8Array or pdf document type create a pdf
+     * TODO: if its a image type open hidden browser window and printToPDF
+     * TODO: if its html open hidden browser window and get outerHTML of the webcontents
+     */
+    switch (type.toLowerCase()) {
+      case 'uint8array':
+      case 'pdfurl':
+        PDFJS.getDocument(data);
+        break;
+      default:
+        console.error('Unable to create a PDF, you did not pass in a type.')
+        break;
+    }
   }
 
   return {
